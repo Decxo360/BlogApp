@@ -4,3 +4,7 @@ De todas maneras tendré en cuenta cuales paquetes han sido instalados, los cual
 
 prop-types
 react-router-dom
+jest
+babel
+wathwg
+redux-toolkit
