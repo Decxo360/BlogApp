@@ -6,6 +6,7 @@ import { BlogApp } from './BlogApp'
 
 
 import './index.css'
+import { store } from './store'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
