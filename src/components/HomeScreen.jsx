@@ -1,7 +1,11 @@
+import { NavBar } from "./ui/NavBar"
 
 
 export const HomeScreen = () => {
   return (
-    <div>HomeScreen</div>
+    <div>
+      <NavBar/>
+      HomeScreen
+    </div>
   )
 }
