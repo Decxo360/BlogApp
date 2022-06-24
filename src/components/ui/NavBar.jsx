@@ -1,6 +1,20 @@
-import {NavLink} from 'react-router-dom'
+import {NavLink,Link, useNavigate} from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux/es/exports'
 
 export const NavBar = () => {
+
+    const user = useSelector(state => state.auth)
+    const dispatch = useDispatch()
+    const navegar = useNavigate() 
+
+    const irALogin = () =>{ 
+        navegar("/Login",{replace:true});
+    }
+    const irARegister = () =>{ 
+        navegar("/register",{replace:true});
+    }
+
+
     return (
         <nav className="navbar navbar-expand-lg " style={{backgroundColor:'currentcolor'}}>
             <div className="container-fluid">
@@ -30,10 +44,10 @@ export const NavBar = () => {
 
                     <ul className="navbar-nav navbar-rigth">
                         <li>
-                            <button type='button' className='btn btn-outline-primary'>Login</button>
+                            <button type='button' className='btn btn-outline-primary' onClick={irALogin}>Login</button>
                         </li>
                         <li>
-                            <button type='button' className='btn btn-outline-success' style={{marginLeft:'10px'}}>Register</button>
+                            <button type='button' className='btn btn-outline-success' style={{marginLeft:'10px'}} onClick={irARegister}>Register</button>
                         </li>
                     </ul>
 
