@@ -1,6 +1,11 @@
 import { Link } from "react-router-dom"
+import { useDispatch } from "react-redux/es/exports";
+import { logIn,logOut } from '../../store/slices/auth/authContext'
 
 export const Register = () => {
+
+  const dispatch = useDispatch()
+
   return (
     <div className="card mt-5 mx-auto" style={{width:'50%'}}>
       <div className='card-header bg-dark text-light'>
@@ -25,7 +30,7 @@ export const Register = () => {
           </form>
       </div>
       <div className='card-footer d-grid gap-2 bg-dark'>
-          <button className='btn btn-outline-primary' type='button'>Registrarse</button>
+          <button className='btn btn-outline-primary' type='button' onClick={()=>dispatch(logOut())}>Registrarse</button>
           <h6 className='mx-auto text-light'>¿Ya tienes una cuenta?, <Link to={'/login'} style={{color:'white'}}>Logueate!</Link></h6>
       </div>
     </div>
